@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif; 
+  background-color: #6b82e7;      
+  color: #000000;                 
+}
+
+/* Estilos para articulos*/
+article {
+  background-color: #e6f1a8; 
+  padding: 1rem;             
+  margin-bottom: 1rem;       
+}
+
+/* Se aplica solo al <article> con clase "destacado"
+   dentro de un contenedor con clase "galeria" */
+.galeria .destacado {
+  background-color: #93fafa; 
+  border: 6px double #e5ff00; 
+}
+
+/* Conflicto de especifidad */
+h2 {
+  font-size: 1.8rem;
+}
+
+/* Esta regla tiene mayor especificidad porque usa un ID. */
+#presentacion h2 {
+  font-size: 2rem;
+}
+
+/* Selectore simples de tipo: CLASE, ID */
+
+/* Estilo aplicado al elemento con ID "nombre-usuario" */
+#nombre-usuario {
+  color: rgb(90, 90, 90); /* Gris oscuro */
+}
+
+/* Estilo para cualquier elemento con clase "descripcion" */
+.descripcion {
+  font-style: italic;   /* Texto en cursiva */
+  color: #ff3c00;       /* Negro (reafirma el color por si hay herencia o sobreescritura) */
+}
+
+/* Selectores compuestos y operadores */
+
+/* Estilo para los enlaces (<a>) dentro de la lista de navegación */
+nav ul li a {
+  color: rgb(0, 255, 85);     
+  text-decoration: none; 
+}
+
+/* Selecciona el primer <article> que está inmediatamente después de un <h2> */
+h2 + article {
+  background-color: #fa9393; 
+  border: 4px solid rgb(160, 0, 160); 
+}
+
+/* Selecciona todos los <article> que sean hermanos siguientes del artículo con clase "destacado" */
+.destacado ~ article {
+  border: 4px dashed rgb(255, 0, 0); 
+}
+
+/* Selector de atributo:
+   Aplica estilo solo a los <input> con type="text" */
+input[type="text"] {
+  border: 2px solid rgb(229, 255, 0); 
+}
+
+/* Conflicto de sobrescritura por cascada */
+
+button {
+  background-color: rgb(255, 255, 255); 
+  color: rgb(26, 247, 5);               
+  padding: 0.5rem 1rem;                 
+}
+
+button {
+  background-color: rgb(104, 105, 105); 
+  color: rgb(0, 0, 0);                  
+}
+
+/* HConflicto de sobrescritura por herencia */
+
+footer {
+  color: rgb(1, 255, 1);
+}
+
+footer p {
+  color: rgb(0, 0, 0);
+}
